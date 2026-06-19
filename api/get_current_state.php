@@ -4,7 +4,9 @@ require_once __DIR__ . '/src/Mob.php';
 require_once __DIR__ . '/get_pokemons.php';
 use src\Mob;
 
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 $catalog = getCatalog();
 
